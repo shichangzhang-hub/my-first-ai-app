@@ -6,9 +6,14 @@ import numpy as np
 # ================= 1. 基础配置与页面初始化 =================
 st.set_page_config(page_title="Coyote-X1 智能助理", layout="wide")
 
-# 请在这里填入你的真实 API Key
-API_KEY = "sk-ddb352b28cba41d09dea8883663f2b4f" 
-CHAT_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
+API_KEY = "sk-9404cf2c62e14540bbdb651184e02f11" 
+# 换成 DeepSeek 的兼容接口地址
+CHAT_URL = "https://api.deepseek.com/chat/completions"
+
+payload = {
+    "model": "deepseek-chat",  # 呼叫 DeepSeek 的核心大模型
+    "messages": final_messages
+}
 EMBED_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings"
 
 # --- 核心算法函数（保持不变） ---
